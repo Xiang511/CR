@@ -1,4 +1,4 @@
-# CR Web
+# Clash Royale Web
 
 ## 流體力學 網站
 
