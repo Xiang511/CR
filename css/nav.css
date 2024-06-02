@@ -9,6 +9,9 @@
     font-family: 'Noto Sans TC', sans-serif;
     /* border: 1px solid; */
 }
+html{
+    scroll-behavior: smooth;
+}
 header{
     z-index: 999;
     position: fixed;
