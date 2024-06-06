@@ -19,7 +19,7 @@
 
 
     <!-- icon -->
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- icon -->
@@ -180,198 +180,107 @@
                 <p>未來也將不定時舉辦現役職業選手挑戰賽</p>
             </div>
         </div>
-        <div class="wrap">
-            <div class="frame">
-                <div class="cards">
-                    <div class="card-item">
-                        <div class="grow"></div>
-                        <div class="mp4">
-                            <div class="mv">
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/APxjMyQfy4A?si=gP6YafKALMXWc2OK"
-                                    title="YouTube video player" frameborder="0"
-                                    loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-
-                        <div class="txt">
-                            <h4>流體力學vsTeamDragon交流賽！</h4>
-                            <p>日期：2023年9月2日</p>
-                            <div class="grow"></div>
-                            <span>流體力學vsTeamDragon，誰將勝出？
-
-                                兩支實力強勁的部落將在9月2號正面交鋒！
-
-                                這場交流賽將是兩支戰隊首次交手，必將精彩紛呈。</br>
-
-                                歡迎所有皇室愛好者前來觀賽！</span>
-                            <div class="grow"></div>
-                            <!-- <a class="more" href="#">了解更多</a> -->
-                        </div>
-                        <div class="grow"></div>
+        <div class="btn">
+            <button>點擊載入!</button>
+        </div>
 
 
-                    </div>
-
-                    <div class="card-item">
-                        <div class="grow"></div>
-                        <div class="mp4">
-                            <div class="mv">
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/OKTTEchOurM?si=eLKZ53aG3tOGGCeK&amp;start=120"
-                                    title="YouTube video player" frameborder="0"
-                                    loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
-
-                        <div class="txt alignc" id="secondh4">
-                            <h4>流體力學xHigher挑戰賽！</h4>
-                            <p>日期：2023年7月22日</p>
-                            <!-- <div class="grow"></div> -->
-                            <span>
-
-                            </span>
-                            <!-- <div class="grow"></div> -->
-                            <!-- <a class="more" href="#">了解更多</a> -->
-                        </div>
-                        <div class="grow"></div>
 
 
-                    </div>
 
-                    <div class="card-item">
-                        <div class="grow"></div>
-                        <div class="mp4">
-                            <div class="mv">
-                                <iframe width="560" height="315"
-                                    src="https://www.youtube.com/embed/vuvbQ-6jq2E?si=-Sa3y4Ge9uJAAhEa&amp;start=104"
-                                    title="YouTube video player" frameborder="0"
-                                    loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen></iframe>
-                            </div>
-                        </div>
+        <div class="wrap matchvideo">
+            <script>
+                document.querySelector('.btn button').addEventListener('click', function () {
+                    const matchVideo = document.querySelector('.matchvideo');
+                    const button = this; // 獲取當前按鈕
+                    matchVideo.style.opacity = '0'; // 設置透明度為0開始過渡
 
-                        <div class="txt alignc">
-                            <h4>流體力學xLucas挑戰賽！</h4>
-                            <p>日期：2023年6月25日</p>
-                            <!-- <div class="grow"></div> -->
-                            <span>
-
-                            </span>
-                            <!-- <div class="grow"></div> -->
-                            <!-- <a class="more" href="#">了解更多</a> -->
-                        </div>
-                        <div class="grow"></div>
-
-
-                    </div>
-
-                </div>
-            </div>
+                    fetch('./video.html')
+                        .then(response => response.text())
+                        .then(html => {
+                            matchVideo.innerHTML = html; // 插入HTML內容
+                            setTimeout(() => matchVideo.style.opacity = '1', 10); // 稍微延遲後開始過渡到透明度1
+                            button.style.display = 'none'; // 隱藏按鈕
+                        })
+                        .catch(error => console.error('載入錯誤:', error));
+                });
+            </script>
         </div>
         </br>
 
 
     </section>
+    <div class="container">
+
+        <main class="row">
+
+            <!--   *******  Education Section Starts  *******   -->
+
+            <section class="col">
 
 
-    <script type="text/javascript">
-        var dateReviver = function (key, value) {
-            var a;
-            if (typeof value === 'string') {
-                a = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2}(?:\.\d*)?)Z$/.exec(value);
-                if (a) {
-                    return new Date(Date.UTC(+a[1], +a[2] - 1, +a[3], +a[4], +a[5], +a[6]));
-                }
-            }
-            return value;
-        };
-        function bestdaylong_inq(orderID) {
-            var xmlhttp;
 
-            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-                xmlhttp = new XMLHttpRequest();
-            }
-            else {// code for IE6, IE5
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                    var result = xmlhttp.responseText;
-                    var obj = JSON.parse(result, dateReviver);//解析json字串為json物件形式
+                <div class="contents">
 
-                    var html = '<table id="myTable" class="hover">';
-                    html += '<thead>';
-                    html += '<tr>';
-                    html += '<th>遊戲ID</th>';
-                    html += '<th>LINE</th>';
-                    html += '<th>最佳排名</th>';
-                    html += '<th>上季排名</th>';
-                    html += '</tr>';
-                    html += '</thead>';
-                    html += '<tbody>';
-                    for (var i = 0; i < obj.length; i++) {//
-                        html += '<tr>';//
-                        for (j = 0; j < obj[i].data.length; j++) {
-                            html += '<td>' + obj[i].data[j] + '</td>';
-                        }
-                        html += '</tr>';
-                    }
-                    html += '</tbody>';
-                    html += "</table>";
-                    if (obj.length > 8) {
-                        let div = document.getElementById('result');
-                        div.style.height = '100%';
-                    }
-                    document.getElementById("order_status").innerHTML = html;
-                    if (obj.length == 1) //只有一筆代表查不到資料
-                        alert('查無資料');
-                }
-                let table = new DataTable('#myTable', {
-                    order: [[2, 'asc']],
-                    info: false,
-                    // ordering: false,
-                    // paging: false
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>High School Degree</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
 
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>Bachelor's Degree</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
 
-                });
-            }
-            var url = "https://script.google.com/macros/s/AKfycbya8vP7vs6gS_avX8iq_dda2GtUQQoN9GUEDvIJ_h_v0iOiQzukNSSDeqb3Kw5m5QK98A/exec";
-            xmlhttp.open("get", url + "?orderID=" + orderID, true);
-            xmlhttp.send();
-        }
-    </script>
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>Master Degree</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
 
-    <section class="search" id="search">
-        <div class="title">
-            <div class="center">
-                <h1>成員查詢</h1>
-                <span class="load">載入中..</span>
-            </div>
-        </div>
-        <div class="form">
-            <input id="atmNO" type="text" style="display: none;"><br />
-            <input type="text" id="orderID" placeholder="" value="all" disabled style="display: none;"
-                onclick="document.getElementById('orderID').value=''" />
-            <input type="button" class="btn" name="inq" value="立即查詢!" onclick="bestdaylong_inq(orderID.value,atmNO.value);
-            let form = document.querySelector('.form');
-            form.style.display = 'none';
-            let load = document.querySelector('.load');
-            load.style.display = 'block';
-            setTimeout(function() {
-                load.style.display = 'none';
-            }, 3000);">
-        </div>
-        <div class="result" id="result">
-            <span id="order_status"></span>
-        </div>
-    </section>
+                </div>
+            </section>
 
+            <!--   *******  Education Section Ends  *******   -->
+
+            <!--   *******  Experience Section Starts  *******  -->
+
+            <section class="col">
+
+                <div class="contents">
+
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>UI/UX Designer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>Full-Stack Developer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+
+                    <div class="box">
+                        <h4>2018 - 2022</h4>
+                        <h3>Frontend Developer</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!--   *******  Experience Section Ends   *******  -->
+        </main>
+    </div>
 
 
     <footer>
