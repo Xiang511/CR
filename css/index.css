@@ -157,6 +157,7 @@
 }
 .alignc{
     justify-content: center;
+    align-items: center;
 }
 .card-item .txt h4{
     font-size: 1.4em;
@@ -254,6 +255,7 @@ input:hover{
 .match .btn{
     display: flex;
     justify-content: center;
+
 }
 .match button {
     all: unset;
